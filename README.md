@@ -6,27 +6,31 @@
 
 ## ✨ What You Get
 
-🎯 **Pre-configured Codespace** with:
-- Node.js (LTS) + Python 3.11 + Git
-- GitHub Copilot & Copilot Chat
-- Remote SSH for VPS connections
-- Port forwarding (3000-3010, 5678)
-- Essential VS Code extensions
+🎯 **Fully-Equipped Cloud Development Environment:**
+- **Multiple Languages:** Node.js, Python, Go, Rust, Java
+- **DevOps Tools:** Docker, Kubernetes, Terraform, AWS CLI, Azure CLI
+- **AI-Powered Coding:** GitHub Copilot & Copilot Chat
+- **40+ VS Code Extensions:** Pre-installed and configured
+- **Enhanced Shell:** Zsh with Oh My Zsh, modern CLI tools (bat, exa, fzf)
+- **Auto-Configuration:** Post-create scripts set everything up automatically
 
 🤖 **AI-Powered Workflow:**
-- Claude AI for architecture & debugging
-- GitHub Copilot for code completion
-- Integrated development workflow
+- Claude AI for architecture, debugging, and complex problem-solving
+- GitHub Copilot for intelligent code completion
+- IntelliCode for AI-assisted development
+- Integrated development workflow with best practices
 
-🔐 **Security First:**
-- SSH key management
-- Environment variable handling
-- Secure .gitignore configuration
+🔐 **Security & Best Practices:**
+- SSH key management with agent auto-start
+- Secure environment variable handling
+- EditorConfig for consistent code formatting
+- Security-focused extensions and linting
 
-📚 **Complete Documentation:**
-- Step-by-step setup guides
-- Best practices & workflows
-- Troubleshooting resources
+📚 **Comprehensive Documentation:**
+- Step-by-step setup guides for every scenario
+- AI integration workflows and best practices
+- DevOps and deployment guides
+- Extensive troubleshooting resources
 
 ---
 
@@ -61,10 +65,20 @@ cd my-project
 
 Run in Codespace terminal:
 ```bash
-node --version    # Should show v20.x
-python --version  # Should show 3.11.x
-git --version     # Latest
-gh auth status    # GitHub CLI authenticated
+# Language runtimes
+node --version     # Node.js LTS
+python --version   # Python 3.11
+go version         # Go latest
+rustc --version    # Rust latest
+java --version     # Java latest
+
+# DevOps tools
+docker --version   # Docker
+kubectl version --client  # Kubernetes
+terraform version  # Terraform
+aws --version      # AWS CLI
+az version         # Azure CLI
+gh --version       # GitHub CLI
 ```
 
 ---
@@ -74,34 +88,78 @@ gh auth status    # GitHub CLI authenticated
 | Document | Purpose |
 |----------|---------|
 | **[WORKSPACE_SETUP.md](./WORKSPACE_SETUP.md)** | Complete setup walkthrough |
+| **[.devcontainer/README.md](./.devcontainer/README.md)** | DevContainer configuration details |
 | **[docs/CLAUDE_INTEGRATION.md](./docs/CLAUDE_INTEGRATION.md)** | Claude AI workflow guide |
 | **[docs/SSH_VPS_GUIDE.md](./docs/SSH_VPS_GUIDE.md)** | Remote server connections |
+| **[.github/CODESPACES.md](./.github/CODESPACES.md)** | GitHub Codespaces configuration |
 
 ---
 
 ## 🛠️ What's Included
 
-### Development Tools
-- **Node.js (LTS):** JavaScript/TypeScript runtime
-- **Python 3.11:** Data science, automation, backends
-- **Git:** Version control
-- **GitHub CLI:** Repository management from terminal
-- **SSH:** Secure remote connections
+### Languages & Runtimes
+- **Node.js (LTS)** with npm, yarn, pnpm - JavaScript/TypeScript development
+- **Python 3.11** with pip, black, pylint - Python development & data science
+- **Go (latest)** - Systems programming & cloud services
+- **Rust (latest)** - High-performance applications
+- **Java (latest)** with Maven & Gradle - Enterprise development
 
-### VS Code Extensions
-- **GitHub Copilot** - AI code completions
-- **GitHub Copilot Chat** - Conversational AI assistance
-- **Remote SSH** - Connect to VPS/servers
-- **Python** - Python development
-- **ESLint** - JavaScript linting
-- **Prettier** - Code formatting
-- **GitLens** - Git visualization
+### DevOps & Cloud Tools
+- **Docker** - Container development with Docker-in-Docker
+- **Kubernetes** - kubectl & Helm for container orchestration
+- **Terraform** - Infrastructure as Code
+- **AWS CLI** - Amazon Web Services management
+- **Azure CLI** - Microsoft Azure management
+- **GitHub CLI** - Repository management from terminal
+
+### Shell & Terminal
+- **Zsh with Oh My Zsh** - Enhanced shell experience
+- **Modern CLI tools** - bat (better cat), exa (better ls), fzf (fuzzy finder)
+- **Helpful aliases** - Pre-configured shortcuts for git, docker, and more
+- **SSH agent** - Automatic SSH key management
+
+### VS Code Extensions (40+)
+
+**AI & Productivity:**
+- GitHub Copilot & Copilot Chat
+- IntelliCode & API usage examples
+- Error Lens, Path Intellisense
+- Better Comments, TODO Highlight
+- Spell Checker
+
+**Languages:**
+- Python (Pylance, Black, isort, debugpy)
+- JavaScript/TypeScript (ESLint, Prettier)
+- Go, Rust Analyzer, Java Pack
+- Web Dev (Tailwind, Auto Rename Tag, HTML/CSS)
+
+**DevOps:**
+- Docker, Kubernetes Tools
+- Terraform, AWS Toolkit, Azure Tools
+
+**Git:**
+- GitLens, Git Graph, Git History
+- GitHub Pull Requests
+
+**Database & API:**
+- SQLTools, REST Client, Thunder Client
+
+**Documentation:**
+- Markdown All-in-One
+- Markdown Lint, Mermaid Diagrams
+
+**Testing:**
+- Test Explorer, Jest Runner
+
+**Collaboration:**
+- Live Share
 
 ### Port Forwarding
-Pre-configured ports: `3000-3010`, `5678`
-- Web servers (Express, Next.js, etc.)
-- Development tools
-- Debugging ports
+Pre-configured ports: `3000-3010`, `5000-5001`, `5432`, `5678`, `6379`, `8000`, `8080`, `8888`, `9000`
+- Web applications (React, Express, Next.js)
+- API servers (Flask, Django, FastAPI)
+- Databases (PostgreSQL, Redis)
+- Development servers & debugging
 
 ---
 
@@ -238,11 +296,20 @@ npm install express pg dotenv
 ```
 claude-github-codespace-template/
 ├── .devcontainer/
-│   └── devcontainer.json       # Codespace configuration
+│   ├── devcontainer.json       # Codespace configuration
+│   ├── post-create.sh          # Automated setup script
+│   ├── update.sh               # Update script
+│   └── README.md               # DevContainer documentation
+├── .github/
+│   └── CODESPACES.md           # GitHub Codespaces guide
 ├── docs/
 │   ├── CLAUDE_INTEGRATION.md   # AI workflow guide
 │   └── SSH_VPS_GUIDE.md        # Server connection guide
+├── pc-tools/                   # Windows PC utilities (optional)
+│   └── browser-manager/        # Browser memory management
+├── .editorconfig               # Consistent code formatting
 ├── .gitignore                  # Security-first ignore rules
+├── workspace.code-workspace    # VS Code workspace settings
 ├── README.md                   # This file
 └── WORKSPACE_SETUP.md          # Complete setup walkthrough
 ```
@@ -265,12 +332,15 @@ claude-github-codespace-template/
 
 ```
 ┌────────────────────────────────────────┐
-│  PRODUCTION-READY WORKSPACE TEMPLATE   │
+│  PRODUCTION-READY CLOUD WORKSPACE      │
 ├────────────────────────────────────────┤
 │                                        │
-│  ✅ Development environment            │
-│  ✅ AI-powered coding                  │
-│  ✅ Secure remote access               │
+│  ✅ Multi-language development         │
+│  ✅ DevOps & cloud tools ready         │
+│  ✅ 40+ VS Code extensions             │
+│  ✅ AI-powered coding (Copilot)        │
+│  ✅ Secure SSH & remote access         │
+│  ✅ Automated setup & configuration    │
 │  ✅ Complete documentation             │
 │  ✅ Reusable for all projects          │
 │                                        │
@@ -282,10 +352,33 @@ claude-github-codespace-template/
 ### Next Steps:
 
 1. ✅ **Launch Codespace** (if you haven't)
-2. 📖 **Read** [WORKSPACE_SETUP.md](./WORKSPACE_SETUP.md)
-3. 🔑 **Set up SSH keys** (see [SSH_VPS_GUIDE.md](./docs/SSH_VPS_GUIDE.md))
-4. 🤖 **Try Claude integration** (see [CLAUDE_INTEGRATION.md](./docs/CLAUDE_INTEGRATION.md))
-5. 💻 **Start coding!**
+2. 📖 **Check ~/workspace/WELCOME.md** for quick overview
+3. 🔧 **Read** [.devcontainer/README.md](.devcontainer/README.md) for configuration details
+4. 🔑 **Set up SSH keys** (see [SSH_VPS_GUIDE.md](./docs/SSH_VPS_GUIDE.md))
+5. 🤖 **Try Claude integration** (see [CLAUDE_INTEGRATION.md](./docs/CLAUDE_INTEGRATION.md))
+6. 💻 **Start coding!**
+
+### Helpful Commands:
+
+```bash
+# Check what's installed
+ll                # List files (enhanced with exa)
+node --version    # Check Node.js
+python --version  # Check Python
+docker --version  # Check Docker
+
+# Git shortcuts
+gs                # git status
+gd                # git diff
+gl                # git log with graph
+
+# Docker helpers
+dps               # Docker ps with nice formatting
+dclean            # Clean up Docker resources
+
+# Get AI help
+gh copilot --help # GitHub Copilot CLI help
+```
 
 ---
 
