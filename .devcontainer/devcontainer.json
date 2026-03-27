@@ -1,1 +1,262 @@
-{\n  "name": "Claude + GitHub + VS Code Workspace",\n  "image": "mcr.microsoft.com/devcontainers/universal:2",\n  "features": {\n    "ghcr.io/devcontainers/features/node:1": {\n      "version": "lts"\n    },\n    "ghcr.io/devcontainers/features/python:1": {\n      "version": "3.11"\n    },\n    "ghcr.io/devcontainers/features/git:1": {\n      "version": "latest"\n    },\n    "ghcr.io/devcontainers/features/sshd:1": {\n      "version": "latest"\n    }\n  },\n  "customizations": {\n    "vscode": {\n      "extensions": [\n        "GitHub.copilot",\n        "GitHub.copilot-chat",\n        "ms-vscode-remote.remote-ssh",\n        "ms-python.python",\n        "dbaeumer.vscode-eslint",\n        "esbenp.prettier-vscode",\n        "eamodio.gitlens"\n      ],\n      "settings": {\n        "terminal.integrated.defaultProfile.linux": "bash",\n        "git.autofetch": true,\n        "git.confirmSync": false,\n        "editor.formatOnSave": true,\n        "editor.defaultFormatter": "esbenp.prettier-vscode"\n      }\n    }\n  },\n  "forwardPorts": [3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 5678],\n  "postCreateCommand": "git config --global user.name 'Your Name' && git config --global user.email 'your.email@example.com' && npm install -g yarn pnpm && pip install --upgrade pip",\n  "remoteUser": "codespace"\n}
+{
+  "name": "Claude + GitHub + VS Code Cloud Workspace",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts",
+      "nodeGypDependencies": true,
+      "nvmVersion": "latest"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11",
+      "installTools": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": true
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true,
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "latest",
+      "helm": "latest",
+      "minikube": "none"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true,
+      "username": "codespace",
+      "userUid": "automatic",
+      "userGid": "automatic"
+    },
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "latest",
+      "installMaven": true,
+      "installGradle": true
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "ms-python.debugpy",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "zignd.html-css-class-completion",
+        "ecmel.vscode-html-css",
+        "golang.go",
+        "rust-lang.rust-analyzer",
+        "redhat.java",
+        "vscjava.vscode-java-pack",
+        "mtxr.sqltools",
+        "humao.rest-client",
+        "rangav.vscode-thunder-client",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "hashicorp.terraform",
+        "amazonwebservices.aws-toolkit-vscode",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "GitHub.vscode-pull-request-github",
+        "aaron-bond.better-comments",
+        "wayou.vscode-todo-highlight",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "christian-kohler.path-intellisense",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "bierner.markdown-mermaid",
+        "hbenl.vscode-test-explorer",
+        "orta.vscode-jest",
+        "ms-vscode.test-adapter-converter",
+        "pkief.material-icon-theme",
+        "github.github-vscode-theme",
+        "ms-vsliveshare.vsliveshare"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh",
+            "icon": "terminal"
+          }
+        },
+        "terminal.integrated.fontSize": 14,
+        "terminal.integrated.fontFamily": "monospace",
+        "git.autofetch": true,
+        "git.confirmSync": false,
+        "git.enableSmartCommit": true,
+        "git.suggestSmartCommit": true,
+        "gitlens.codeLens.enabled": true,
+        "gitlens.hovers.enabled": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit",
+          "source.organizeImports": "explicit"
+        },
+        "editor.inlineSuggest.enabled": true,
+        "editor.suggestSelection": "first",
+        "editor.fontSize": 14,
+        "editor.lineHeight": 22,
+        "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'Courier New', monospace",
+        "editor.fontLigatures": true,
+        "editor.minimap.enabled": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.guides.bracketPairs": true,
+        "editor.wordWrap": "on",
+        "editor.rulers": [80, 120],
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.exclude": {
+          "**/.git": true,
+          "**/.DS_Store": true,
+          "**/node_modules": true,
+          "**/__pycache__": true,
+          "**/.pytest_cache": true,
+          "**/*.pyc": true
+        },
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          }
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+          "editor.wordWrap": "on"
+        },
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "black",
+        "python.analysis.typeCheckingMode": "basic",
+        "python.analysis.autoImportCompletions": true,
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
+        ],
+        "github.copilot.enable": {
+          "*": true,
+          "yaml": true,
+          "plaintext": false,
+          "markdown": true
+        },
+        "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+        "docker.showStartPage": false,
+        "prettier.singleQuote": true,
+        "prettier.trailingComma": "es5",
+        "prettier.tabWidth": 2,
+        "prettier.semi": true,
+        "workbench.colorTheme": "GitHub Dark Default",
+        "workbench.iconTheme": "material-icon-theme",
+        "workbench.startupEditor": "readme",
+        "workbench.editor.enablePreview": false,
+        "search.exclude": {
+          "**/node_modules": true,
+          "**/bower_components": true,
+          "**/*.code-search": true,
+          "**/dist": true,
+          "**/build": true,
+          "**/.venv": true,
+          "**/venv": true
+        },
+        "security.workspace.trust.untrustedFiles": "prompt"
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "WORKSPACE_SETUP.md"
+      ]
+    }
+  },
+  "forwardPorts": [
+    3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010,
+    5000, 5001, 5432, 5678, 6379, 8000, 8080, 8888, 9000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    },
+    "6379": {
+      "label": "Redis",
+      "onAutoForward": "silent"
+    },
+    "8000": {
+      "label": "Development Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "remoteUser": "codespace",
+  "updateContentCommand": "bash .devcontainer/update.sh",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/codespace/.ssh-localhost,type=bind,consistency=cached"
+  ]
+}

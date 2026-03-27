@@ -1,0 +1,44 @@
+# VS Code Workspace Settings
+# These settings apply to this workspace when opened in VS Code
+
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.json": "jsonc",
+      "Dockerfile*": "dockerfile",
+      ".env*": "properties"
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/.venv/**": true,
+      "**/venv/**": true,
+      "**/__pycache__/**": true
+    },
+    "explorer.confirmDelete": true,
+    "explorer.confirmDragAndDrop": true,
+    "terminal.integrated.scrollback": 10000,
+    "diffEditor.ignoreTrimWhitespace": false
+  },
+  "extensions": {
+    "recommendations": [
+      "github.copilot",
+      "github.copilot-chat",
+      "ms-vscode-remote.remote-containers",
+      "ms-azuretools.vscode-docker",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "eamodio.gitlens",
+      "ms-kubernetes-tools.vscode-kubernetes-tools",
+      "hashicorp.terraform"
+    ]
+  }
+}
